@@ -1,0 +1,8 @@
+<div class="search-directive">
+    <form name="seach-box-form" ng-submit="onSearch()">
+        <input type="text" ng-model="ngModel" placeholder="{{placeholder}}"/>
+        <button type="submit" ng-disabled="isSearching || !ngModel">
+            <i class="fa fa-spin fa-spinner" ng-show="isSearching"></i> <span ng-show="!isSearching">SEARCH</span>
+        </button>
+    </form>
+</div>

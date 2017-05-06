@@ -1,0 +1,32 @@
+{
+  "name": "compucorpassignment",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "gulp serve",
+    "test": "gulp test"
+  },
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject": "^4.2.0",
+    "gulp-karma": "0.0.5",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.3.2",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-uglify": "^2.1.2",
+    "jasmine-core": "^2.6.1",
+    "karma": "^1.6.0",
+    "karma-coverage": "~0.5.2",
+    "karma-jasmine": "~0.3.6",
+    "karma-ng-html2js-preprocessor": "~0.2.0",
+    "karma-phantomjs-launcher": "~0.2.1",
+    "karma-phantomjs-shim": "~1.2.0",
+    "karma-spec-reporter": "0.0.31",
+    "main-bower-files": "^2.13.1",
+    "phantomjs": "^2.1.7"
+  },
+  "devDependencies": {}
+}

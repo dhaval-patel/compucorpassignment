@@ -1,0 +1,73 @@
+<div>
+    <div class="header">
+        <div class="top-bar">
+            <img src="src/assets/gl-logo@2x.png" class="logo">
+            <h2 class="pull-right powered-by">Powered by Spotify</h2>
+        </div>
+        <div class="text-center">
+            <img src="src/assets/hero-img@2x.png" class="banner"/>
+            <img src="src/assets/Page 1@2x.png" class="page-icon"/>
+        </div>
+    </div>
+    <div class="search-container">
+        <div class="search-box">
+            <search-box ng-model="vm.search.q" on-search="vm.onSearch" placeholder="Search for artist or album title" is-searching="vm.isSearching"></search-box>
+        </div>
+    </div>
+    <div class="search-result-container">
+
+        <div class="card-list" ng-show="vm.search.data && vm.search.data.length">
+            <card-list cards="vm.search.data" on-card-select="vm.onCardSelect"></card-list>
+            <div class="text-center">
+                <button type="button" class="show-me-more" ng-click="vm.onLoadMore()">
+                    <i class="fa fa-spin fa-spinner" ng-show="vm.isLoadingMore"></i> <span ng-show="!vm.isLoadingMore">SHOW ME MORE</span>
+                </button>
+            </div>
+        </div>
+
+        <div ng-show="!vm.search.data && !vm.isSearching" class="search-placeholder text-center">
+            <img src="src/assets/Magnify@2x.png"/>
+            <h2 class="message">Your results will appear here</h2>
+        </div>
+        <div ng-show="vm.isSearching" class="search-placeholder text-center">
+            <h2 class="message"><i class="fa fa-spin fa-spinner"></i></h2>
+        </div>
+        <div ng-show="vm.search.data && vm.search.data.length == 0 && !vm.isSearching" class="search-placeholder text-center">
+            <h2 class="message">No result found.</h2>
+        </div>
+    </div>
+    <div class="footer">
+        <h4 class="text-center">
+            Designed By Geek Label - Powered by Spotify
+        </h2>
+    </div>
+</div>
+
+<modal-dialog show='vm.modalShow'  ng-if="vm.selectedCard">
+    <div class="album-modal">
+        <div class="poster">
+            <img ng-src="{{vm.getImage(vm.selectedCard)}}">
+            <div class="detail">
+                <h3 class="album-for">{{card.type === 'album' ? 'Tracks on' : 'Albums by'}}</h3>
+                <h1 class="title">{{vm.selectedCard.name}}</h2>
+            </div>
+        </div>
+      <div class="tracks" ng-if="vm.tracks">
+          <h3 class="tracks-title">Tracks</h3>
+          <div ng-repeat="track in vm.tracks" class="track">
+              <h2 class="track-title">{{track.name}}</h2>
+              <h5 class="track-time">{{track.duration_ms}}</h5>
+          </div>
+      </div>
+      <div class="tracks" ng-if="vm.albums">
+          <h3 class="tracks-title">Albums</h3>
+          <div ng-repeat="album in vm.albums" class="track">
+              <img ng-src="{{vm.getImage(album)}}" class="album-poster">
+              <div class="album-detail">
+                <h2 class="track-title">{{album.name}}</h2>
+                <h5 class="track-time">2017</h5>
+              </div>
+          </div>
+      </div>
+    </div>
+</modal-dialog>

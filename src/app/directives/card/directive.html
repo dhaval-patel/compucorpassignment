@@ -1,0 +1,15 @@
+<div class="card-directive">
+    <div class="poster-container">
+        <img ng-src="{{getImage()}}" class="poster">
+        <img 
+        ng-src="{{card.type === 'album' ? 'src/assets/album-icon@2x.png' : 'src/assets/artist-icon@2x.png'}}"
+        class="icon {{card.type}}">
+        <div class="hover-container text-center">
+            <img src="src/assets/Bitmap@2x.png">
+            <h3>View {{card.type === 'album' ? 'Tracks' : 'Albums'}}</h3>
+        </div>
+    </div>
+    <div class="detail">
+        <h3 class="title">{{card.name}}</h3>
+    </div>
+</div>
