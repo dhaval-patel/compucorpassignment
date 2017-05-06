@@ -109,7 +109,7 @@ gulp.task('dist:copy:js:app', function () {
 gulp.task('dist:copy:js:html', function () {
     return gulp.src('src/app/**/*.html')
         .pipe(templateCache({module: 'CompuCorpApp', root: 'src/app'}))
-        .pipe(replace('src/assets/', 'assets/'))
+        .pipe(replace('src/assets/', 'sassets/'))
         .pipe(uglify())
         .pipe(gulp.dest('./dist/js'));
 });
