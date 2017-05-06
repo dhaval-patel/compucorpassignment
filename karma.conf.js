@@ -9,10 +9,23 @@ module.exports = function (config) {
             './bower_components/angular-ui-router/release/angular-ui-router.min.js',
             './src/app/module.js',
             './src/app/**/*.js',
-            './test/**/*.js'
+            './test/**/*.js',
+            './src/app/**/*.html'
         ],
         exclude: [],
-        preprocessors: {},
+        preprocessors: {
+            '**/*.html': ['ng-html2js']
+        },
+
+        ngHtml2JsPreprocessor: {
+            stripPrefix: '',
+            stripSuffix: '',
+            prependPrefix: '',
+            cacheIdFromPath: function(filepath) {
+                return filepath;
+            },
+            moduleName: 'CompuCorpApp'
+        },
         reporters: ['spec'],
         port: 9876,
         colors: true,

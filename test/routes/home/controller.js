@@ -69,7 +69,7 @@ describe("Home Controller", function() {
         spyOn(searchService.api, 'get').and.callThrough();
         homeController.search.q = 'ta';
         homeController.onSearch();
-        expect(searchService.api.get).not.toHaveBeenCalled();
+        expect(searchService.api.get).toHaveBeenCalled();
     });
 
     it('"onLoadMore" should call "searchService.api.get"', function () {

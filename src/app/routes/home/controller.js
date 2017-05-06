@@ -26,7 +26,7 @@ angular
                     vm.isSearching = false;
                 });
             }
-        };
+        }
 
         function loadMore() {
             vm.isLoadingMore = true;
@@ -72,7 +72,7 @@ angular
             }
 
             return '';
-        };
+        }
 
         var vm = this;
         

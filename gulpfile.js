@@ -159,5 +159,5 @@ gulp.task('test', function () {
 });
 
 gulp.task('autotest', function () {
-    return gulp.watch(['www/js/**/*.js', 'test/spec/*.js'], ['test']);
+    return gulp.watch(['test/**/*.js'], ['test']);
 });
