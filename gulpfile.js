@@ -23,7 +23,7 @@ gulp.task('sass', function () {
 gulp.task('dist:sass', function () {
     return gulp.src('./src/sass/**/*.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(replace('src/assets/', 'assets/'))
+        .pipe(replace('src/assets/', '../assets/'))
         .pipe(gulp.dest('./dist/css'));
 });
 
