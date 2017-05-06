@@ -17,7 +17,7 @@
 ### Start development server
     gulp serve
 
-### Generate distribution package gulp dist
+### Generate distribution package
     gulp dist
     
 ### Run unit test cases
